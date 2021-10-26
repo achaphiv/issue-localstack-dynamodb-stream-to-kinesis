@@ -81,7 +81,7 @@ public class WatchKinesis {
         ByteBuffer data = record.getData();
         try {
           JsonNode deserialized = new ObjectMapper().readTree(data.array());
-           System.err.println("Record: " + deserialized);
+          System.err.println("Record: " + deserialized);
         } catch (IOException e) {
           throw new UncheckedIOException(e);
         }
@@ -89,7 +89,6 @@ public class WatchKinesis {
     }
 
     @Override
-    public void shutdown(ShutdownInput input) {
-    }
+    public void shutdown(ShutdownInput input) {}
   }
 }
