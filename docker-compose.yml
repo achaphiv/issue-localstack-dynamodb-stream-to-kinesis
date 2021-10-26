@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  localstack:
+
+services:
+  localstack:
+    image: docker.io/localstack/localstack:0.12.19
+    environment:
+      - SERVICES=kinesis,cloudwatch,dynamodb
+      - DATA_DIR=/tmp/localstack/data
+      - KINESIS_LATENCY=0
+      - KINESIS_PROVIDER=kinesalite
+    ports:
+      - '4566:4566'
+    volumes:
+      - 'localstack:/tmp/localstack'
+      - ./docker-compose-files/localstack/:/docker-entrypoint-initaws.d
+    restart: always

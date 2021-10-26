@@ -1,0 +1,16 @@
+{
+  "TableName": "bug",
+  "KeySchema": [
+    { "AttributeName": "hash", "KeyType": "HASH" },
+    { "AttributeName": "range", "KeyType": "RANGE" }
+  ],
+  "AttributeDefinitions": [
+    { "AttributeName": "hash", "AttributeType": "S" },
+    { "AttributeName": "range", "AttributeType": "S" }
+  ],
+  "StreamSpecification": {
+    "StreamEnabled": true,
+    "StreamViewType": "NEW_AND_OLD_IMAGES"
+  },
+  "BillingMode": "PAY_PER_REQUEST"
+}
