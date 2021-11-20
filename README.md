@@ -1,5 +1,7 @@
 # Issue
 
+https://github.com/localstack/localstack/issues/4794
+
 - Create kinesis stream
 - Create dynamodb table
 - Connect dynamodb table to kinesis stream
